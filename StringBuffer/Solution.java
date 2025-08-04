@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Solution {
     public static void main(String[] args) {
-        // StringBuffer sb =new StringBuffer("hello my name is NAjim");
-        // replace(sb);
-        int[] arr ={1,2,3,4,5,6,7};
-        rotate(arr, 3);
-        System.out.println(Arrays.toString(arr));
+        StringBuffer sb =new StringBuffer("hello my name is NAjim");
+        replace(sb);
+        // int[] arr ={1,2,3,4,5,6,7};
+        // rotate(arr, 3);
+        // System.out.println(Arrays.toString(arr));
     }
     public static void replace(StringBuffer str)
     {
