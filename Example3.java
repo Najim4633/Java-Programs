@@ -21,7 +21,7 @@ public class Example3 {
             int rem = n%10;
             
 
-            sum += ;
+            sum += rem;
             n /= 10;
         }
         if(temp2==sum)
