@@ -32,7 +32,6 @@ public class DrivingLicence {
     }
         static boolean isValidNum(String str) {
         String regex = "^[A-Z]{2}[0-9]{2}[0-9]{4}[0-9]{7}$";
-;
         return Pattern.matches(regex, str);
 
     }

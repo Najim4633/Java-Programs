@@ -6,6 +6,12 @@ class MyArrayIndexOutOfBoundsException extends RuntimeException {
         super(message);
     }
 }
+interface MyIterator<E>
+{
+    public boolean hasNext();
+    public E next();
+    public void remove1();
+}
 
 class MyArrayList<E> {
     private E[] arr;                 // internal array
@@ -169,6 +175,34 @@ class MyArrayList<E> {
         sb.append("]");
         return sb.toString();
     }
+    public MyIterator iterator()
+    {
+        return new Itr();
+    }
+
+// Iterator inner class 
+    private class Itr implements MyIterator<E>
+    {
+        private int counter;
+        @Override
+        public boolean hasNext()
+        {
+            
+            if(counter < size()) return true;
+            return false ;
+        }
+        @Override
+        public E next() {
+            E temp =arr[counter++];
+            return temp;
+        }
+    
+        public void remove1() {
+            remove(counter);
+        }
+
+    }
+
 }
 
 // Driver class
@@ -177,20 +211,30 @@ public class MyArrayListDriver {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         MyArrayList<Integer> list1 = new MyArrayList<>();
-        list1.add(10);
-        list1.add(20);
-        list1.add(30);
-        list1.add(1, 15);
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(1, 4);
         System.out.println("List1: " + list1);
 
-        MyArrayList<Integer> list2 = new MyArrayList<>(list1);
-        list2.add(25);
-        System.out.println("List2 (copy of List1 + 25): " + list2);
+        // MyArrayList<Integer> list2 = new MyArrayList<>(list1);
+        // list2.add(25);
+        // System.out.println("List2 (copy of List1 + 25): " + list2);
 
-        System.out.println("Contains 20? " + list1.contains(20));
-        System.out.println("Index of 30: " + list1.lastIndexOf(30));
+        // System.out.println("Contains 20? " + list1.contains(20));
+        // System.out.println("Index of 30: " + list1.lastIndexOf(30));
 
-        list1.removeAll(list2);
-        System.out.println("List1 after removeAll(list2): " + list1);
+        // list1.removeAll(list2);
+        // System.out.println("List1 after removeAll(list2): " + list1);
+
+        MyIterator iterator=list1.iterator();
+        
+        
+        // iterator.remove1();
+        while (iterator.hasNext()) {
+             //System.out.println(iterator.next()); 
+            if((Integer)iterator.next() %2!=0) iterator.remove1();
+        }
+        System.out.println(list1);
     }
 }
