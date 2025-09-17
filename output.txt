@@ -1,0 +1,12 @@
+list1 [10, 20, 30]
+cloned [10, 20, 30]
+false
+true
+================================
+list1 original [10, 200000, 30]
+list2 cloned [10, 20, 30]
+list3 cloned assignment operator [10, 200000, 30]
+================================
+list1 original [10, 200000, 30, 200000]
+list2 cloned [10, 20, 30]
+list3 cloned assignment operator [10, 200000, 30, 200000]

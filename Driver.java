@@ -14,6 +14,7 @@ public class Driver {
         int min = (a<b)?(a<c?a:c):(b<c?b:c);
         int mid = (a+b+c)-(max+min);
         System.out.println("The numbers in ascending order are: "+min+" "+mid+" "+max);
+        sc.close();
     }
     
 }

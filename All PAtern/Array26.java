@@ -8,7 +8,7 @@ public class Array26 {
 		distinct(arr);
 		uniqueEle(arr);
 		//dupEle(arr);
-		System.out.println(maxEle(arr));
+		maxEle(arr);
 	}
 
 	static void freq(int[] arr) {
@@ -36,10 +36,8 @@ public class Array26 {
 			if (cntMap[i]) {
 				continue;
 			}
-			int count = 0;
 			for (int j = 0; j < arr.length; j++) {
 				if (arr[i] == arr[j]) {
-					count++;
 					cntMap[j] = true;
 				}
 			}
@@ -97,7 +95,7 @@ public class Array26 {
 				max = i;
 			}
 		}
-		System.out.println("array max element is  "+max);
+		System.out.println("array min element is  "+max);
 	}
     static void minEle(int[] arr)
     {
@@ -108,21 +106,20 @@ public class Array26 {
                 min=ele;
             }
         }
-        System.out.println("array max element is  "+max);
+        System.out.println("array max element is  "+min);
     }
     static void highestRepeting(int [] arr)
     {
         System.out.println("Frequency of elements:- ");
-        int high
+        
 		boolean[] cntMap = new boolean[arr.length];
 		for (int i = 0 ; i < arr.length; i++) {
 			if (cntMap[i]) {
 				continue;
 			}
-			int count = 0;
+			
 			for (int j = 0; j < arr.length; j++) {
 				if (arr[i] == arr[j]) {
-					count++;
 					cntMap[j] = true;
 				}
 			}

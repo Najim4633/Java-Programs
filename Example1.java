@@ -15,6 +15,6 @@ public class Example1 {
             
         }
         System.out.println("Result is " + result);
+        sc.close();
         }
-    
 }

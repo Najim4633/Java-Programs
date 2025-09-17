@@ -13,6 +13,7 @@ public class Example2 {
             num = num / 10;
         }
         System.out.println("user enter number:  "+dup +"  reverse num: "+rev);
+        sc.close();
     }
 
     
