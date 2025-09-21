@@ -1,0 +1,2 @@
+descSelectiom(arr2);
+        
